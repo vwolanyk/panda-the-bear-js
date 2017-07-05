@@ -6,7 +6,7 @@
 
 1. var skyImage = document.querySelector('div#left-image.portfolio-image img');
 
-skyImage.width = 325
+    skyImage.width = 325
 
 2.  var heading = document.querySelector('h1.highlight');
 
@@ -22,7 +22,7 @@ skyImage.width = 325
 
 5. var highlight = document.querySelectorAll(".highlight");
 
-  highlight.forEach(function(item){ item.style.color = "yellow";});
+    highlight.forEach(function(item){ item.style.color = "yellow";});
 
 6. var h1 = document.querySelectorAll("h1");
 
@@ -55,3 +55,49 @@ skyImage.width = 325
 14. var form =  document.querySelector("form");
 
     form.reset();
+
+
+_PART 2_
+
+**Removing Elements From DOM**
+
+``
+1.  var child = document.querySelectorAll('div.bar-default')[2]
+
+    var parent = document.querySelector('section div')
+
+    parent.removeChild(child)
+
+
+**Adding Elements to the DOM**
+
+
+1.  var pikatchu = document.querySelector('div#right-image.portfolio-image img')
+
+    var portfolioContain = document.querySelector('div.portfolio-container')
+
+    portfolioContain.appendChild(pikatchu.cloneNode())
+
+
+2.  for (i = 0; i < 10; i++) { portfolioContain.appendChild(pikatchu.cloneNode());}
+
+
+3.  var addListItem = document.createElement('li')
+
+    var bioInfoTitle = document.createElement('span')
+
+          bioInfoTitle.innerText = "Date Last Updated"
+
+          bioInfoTitle.className = "bio-info-title"
+
+    var bioInfoValue = document.createElement('span')
+
+        bioInfoValue.innerHTML = Date();
+
+        bioInfoValue.className = "bio-info-value bio-info-phone"
+
+    addListItem.appendChild(bioInfoTitle)
+
+    addListItem.appendChild(bioInfoValue)
+
+    document.querySelector('ul.bio-info').appendChild(addListItem)
